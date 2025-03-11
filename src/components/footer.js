@@ -31,7 +31,7 @@ const Footer = () => {
               <li><a href="https://github.com/lilxyzz/holo-theme" target="_blank" rel="noopener noreferrer" className="hover:underline">Scholar</a></li>
             </ul>
           </div>
-
+        </div>
 
         {/* Copyright Section */}
         <div className="border-t border-gray-700 mt-8 pt-6 text-sm text-gray-400 text-center">
