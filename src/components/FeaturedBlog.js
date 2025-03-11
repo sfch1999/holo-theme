@@ -70,13 +70,10 @@ Enhancing Disease Prediction with Explainable AI  (TUM-Funded)            </h2>
             </div>
             <div className="blog-hover bg-white rounded-lg p-8 md:p-12">
               <h2 className="text-gray-900 text-3xl font-simibold mb-2">
-                Lorem ipsum is simply dummy text
+                Enhancing Early Dementia Detection with AI-Driven MRI Analysis (EM Hospital-Funded)
               </h2>
               <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                We have developed an advanced AI solution designed to assist healthcare providers in the early detection and assessment of dementia severity. Our system leverages deep learning techniques to analyze MRI scans, focusing on identifying and evaluating white matter lesions—key indicators of dementia. 
               </p>
               <a
                 href="/blog/blog-post-2"
