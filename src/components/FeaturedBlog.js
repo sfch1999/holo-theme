@@ -14,8 +14,8 @@ const FeaturedBlog = () => {
               Deep distributional reinforcement learning in Finance (RBC-Funded)
             </h2>
             <p className="text-lg  text-black opacity-60 mb-6">
-              we explored the application of reinforcement learning (RL) combined with quantile regression to develop effective hedging strategies for traders managing derivatives linked to a single underlying asset. Our approach ensures daily delta-neutrality by adjusting positions in the underlying asset, while focusing on utilizing option trades to manage gamma and vega exposures, even in the presence of transaction costs. We examine how the optimal hedging strategy varies based on the trader's objective function, transaction cost levels, and the maturity of the options employed for hedging. Additionally, we assess the robustness of our RL-based hedging strategy against different assumptions about the underlying asset's stochastic process.
-            </p>
+Our work focuses on using AI to improve risk management in financial markets, specifically for businesses that deal with options trading and investment strategies. In this research, we developed an AI-powered system that helps traders and financial institutions automatically adjust their portfolios to minimize risk and maximize returns.
+              </p>
             <a
               href="/blog/blog-post"
               className="transition-all duration-500ms ease-in-out hover:ease-in-out inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-black hover:text-white rounded-lg border border-purple  hover:bg-purple"
