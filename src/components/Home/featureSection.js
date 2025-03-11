@@ -13,21 +13,21 @@ const FeatureSection = () => {
       <Fade bottom cascade>
         <div className="mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
           <div className="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-1/3">
-            <h3 className="text-black text-2xl">Performance</h3>
-            <h4 className="mt-10 text-black  opacity-70 text-xl">95+</h4>
+            <h3 className="text-black text-2xl">50+</h3>
+            <h4 className="mt-10 text-black  opacity-70 text-xl">Academic Citations</h4>
           </div>
 
           <div className="w-1/3 bg-dp p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-1/3">
-            <h3 className="text-white text-2xl">Accessibility</h3>
-            <h4 className="mt-10 text-white opacity-70 text-xl">100</h4>
+            <h3 className="text-white text-2xl">500M+</h3>
+            <h4 className="mt-10 text-white opacity-70 text-xl">Data Points Processed</h4>
           </div>
           <div className="w-1/3 bg-dp p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-1/3">
-            <h3 className="text-white text-2xl">Best Practices</h3>
-            <h4 className="mt-10 text-white opacity-70 text-xl">100</h4>
+            <h3 className="text-white text-2xl">100%</h3>
+            <h4 className="mt-10 text-white opacity-70 text-xl">AI-Powered Automation</h4>
           </div>
           <div className="lg:rounded-xl lg:w-1/3 lg:bg-dp bg-dp p-8 rounded-xl m-5 xxs:w-full xxs:bg-dp xxs:rounded-xl xs:w-full xs:bg-dp xs:rounded-xl sm:hidden md:hidden lg:block">
-            <h3 className="text-white text-2xl">SEO</h3>
-            <h4 className="mt-10 text-white opacity-70 text-xl">100</h4>
+            <h3 className="text-white text-2xl">24/7</h3>
+            <h4 className="mt-10 text-white opacity-70 text-xl">Reliability</h4>
           </div>
         </div>
       </Fade>
@@ -220,7 +220,7 @@ const FeatureSection = () => {
           </div>
         </div>
       </Fade>
-      {/* 
+      {/*
       <div className="mt-10 px-8">
         <h2 className="text-black text-4xl font-semibold text-gradient bg-gradient-to-r from-pink to-purple">
           {" "}
