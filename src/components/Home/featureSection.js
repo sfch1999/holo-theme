@@ -122,8 +122,11 @@ const FeatureSection = () => {
             Empowering with Data Science
             </h2>
             <p className="mt-10 text-white opacity-70">
-              Harness the power of artificial intelligence to automate workflows, analyze vast data sets, and enhance decision-making. ABI AI provides custom AI solutions designed to improve efficiency, drive innovation, and give enterprises a competitive edge. Whether you need predictive analytics, natural language processing, or AI-driven automation, our technology seamlessly integrates into your business to unlock new opportunities.
-            </p>
+            In today’s fast-paced digital landscape, businesses must leverage cutting-edge AI solutions to stay competitive, optimize operations, and enhance customer experiences. At ABI AI, we specialize in developing tailored AI-powered systems that help enterprises automate complex workflows, analyze massive data sets, and make smarter, data-driven decisions in real time.
+</p>
+<p className="mt-10 text-white opacity-70">
+            Our AI solutions are designed to boost operational efficiency, reduce manual effort, and unlock new opportunities for growth. Whether it’s predictive analytics to anticipate market trends, natural language processing (NLP) for intelligent automation, or AI-driven decision-making systems, our technology seamlessly integrates with your existing infrastructure.
+              </p>
           </div>
         </div>
       </Fade>
