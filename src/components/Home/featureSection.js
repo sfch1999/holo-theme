@@ -98,8 +98,9 @@ const FeatureSection = () => {
             </span>
             <div className="mt-5">
               <div>
-                <p className="text-black text-2xl">Gatsby 5+</p>
-                <p className="text-black opacity-50 text-sm">SSG and more...</p>
+                <p className="text-black text-2xl">Machine Learning </p>
+                <p className="text-black opacity-50 text-sm">PyTorch & TensorFlow</p>
+                <p className="text-black opacity-50 text-sm">Powering deep learning models for AI solutions. </p>
               </div>
               <div className="mt-5">
                 <p className="text-black text-2xl">React 18+</p>
