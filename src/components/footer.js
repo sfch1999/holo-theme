@@ -20,7 +20,6 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-3">Company</h3>
             <ul className="space-y-2">
               <li><Link to="/about" className="hover:underline">About</Link></li>
-              <li><Link to="/blog" className="hover:underline">Blog</Link></li>
               <li><Link to="/contact" className="hover:underline">Contact</Link></li>
             </ul>
           </div>
@@ -28,28 +27,15 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-3">Resources</h3>
             <ul className="space-y-2">
-              <li><Link to="/gallery" className="hover:underline">Gallery</Link></li>
-              <li><a href="https://github.com/lilxyzz/holo-theme" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub</a></li>
+              <li><Link to="/gallery" className="hover:underline">Innovations</Link></li>
+              <li><a href="https://github.com/lilxyzz/holo-theme" target="_blank" rel="noopener noreferrer" className="hover:underline">Scholar</a></li>
             </ul>
           </div>
 
-          {/* Social Media */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                <img className="w-5 h-5" src="/img/linkedin-icon.png" alt="LinkedIn" />
-              </a>
-              <a href="https://github.com/lilxyzz/holo-theme" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                <img className="w-5 h-5" src="/img/Github-Logo.png" alt="GitHub" />
-              </a>
-            </div>
-          </div>
-        </div>
 
         {/* Copyright Section */}
         <div className="border-t border-gray-700 mt-8 pt-6 text-sm text-gray-400 text-center">
-          &copy; {new Date().getFullYear()} Holo. All Rights Reserved.
+          &copy; {new Date().getFullYear()} ABI AI. All Rights Reserved.
         </div>
       </div>
     </footer>
