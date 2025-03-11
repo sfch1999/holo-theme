@@ -29,7 +29,7 @@ const Header = () => {
                   href="/contact"
                   className="transition-all duration-500ms ease-in-out hover:ease-in-out w-full flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-center bg-purple text-white hover:text-black border border-purple  hover:bg-transparent md:text-lg md:px-10 "
                 >
-                  Contact Us
+                  Book a Demo
                   <svg
                     className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                     aria-hidden="true"
