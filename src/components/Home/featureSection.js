@@ -42,7 +42,7 @@ const FeatureSection = () => {
             ></img>
           </div>
 
-          <div className="lg:w-1/2 sm:text-center  flex-col justify-center">
+          <div className="lg:w-1/2 sm:text-center lg:text-left flex flex-col justify-center">
             <h2 className="text-black text-4xl font-semibold">PERFORMANCE</h2>
             <h2 className="text-black text-4xl font-bold xxs:text-2xl xs:text-3xl sm:text-5xl lg:text-6xl text-gradient bg-gradient-to-r from-pink to-purple">
               Unmatched AI Speed & Efficiency
