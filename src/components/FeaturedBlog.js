@@ -41,13 +41,10 @@ Our work focuses on using AI to improve risk management in financial markets, sp
           <div className="grid md:grid-cols-2 gap-8">
             <div className="blog-hover bg-white rounded-lg p-8 md:p-12">
               <h2 className="text-gray-900 text-3xl font-simibold mb-2">
-                Lorem ipsum is simply dummy text
-              </h2>
+Enhancing Disease Prediction with Explainable AI  (TUM-Funded)            </h2>
               <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                Our latest AI-driven model, IA-GCN (Interpretable Attention-based Graph Convolutional Network), is designed to analyze complex medical data and detect diseases with higher precision than traditional methods.
+                Unlike black-box AI models that provide results without explanation, our solution pinpoints the exact features influencing a diagnosis, making it more transparent, reliable, and actionable for medical professionals.
               </p>
               <a
                 href="/blog/blog-post-1"
