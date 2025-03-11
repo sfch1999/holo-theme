@@ -100,17 +100,23 @@ const FeatureSection = () => {
               <div>
                 <p className="text-black text-2xl">Machine Learning </p>
                 <p className="text-black opacity-50 text-sm">PyTorch & TensorFlow</p>
-                <p className="text-black opacity-50 text-sm">Powering deep learning models for AI solutions. </p>
               </div>
               <div className="mt-5">
-                <p className="text-black text-2xl">React 18+</p>
-                <p className="text-black opacity-50 text-sm">Create more...</p>
+                <p className="text-black text-2xl">NLP & AI Models</p>
+                <p className="text-black opacity-50 text-sm">Hugging Face Transformers</p>
               </div>
               <div className="mt-5">
-                <p className="text-black text-2xl">Tailwind CSS 3+</p>
-                <p className="text-black opacity-50 text-sm">
-                  A utility-first CSS
+                <p className="text-black text-2xl">Big Data Processing</p>
+                <p className="text-black opacity-50 text-sm">Apache Spark & Dask
                 </p>
+              </div>
+              <div className="mt-5">
+                <p className="text-black text-2xl">MLOps & Automation</p>
+                <p className="text-black opacity-50 text-sm">Kubeflow & MLflow</p>
+              </div>
+              <div className="mt-5">
+                <p className="text-black text-2xl">Data Visualization</p>
+                <p className="text-black opacity-50 text-sm">Plotly & Dash</p>
               </div>
             </div>
           </div>
