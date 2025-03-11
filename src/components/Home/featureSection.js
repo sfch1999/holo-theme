@@ -119,7 +119,7 @@ const FeatureSection = () => {
 
           <div className="w-4/6 bg-dp p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-4/6">
             <h2 className="text-white text-4xl">
-            Empower Your Business with Cutting-Edge AI
+            Empower Your Business with Data Science
             </h2>
             <p className="mt-10 text-white opacity-70">
               Harness the power of artificial intelligence to automate workflows, analyze vast data sets, and enhance decision-making. ABI AI provides custom AI solutions designed to improve efficiency, drive innovation, and give enterprises a competitive edge. Whether you need predictive analytics, natural language processing, or AI-driven automation, our technology seamlessly integrates into your business to unlock new opportunities.
