@@ -17,8 +17,8 @@ const Header = () => {
             </h2>
 
             <p className="mt-3 text-base text-black-70 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              ABI AI delivers bespoke AI solutions to enhance operational efficiency, drive innovation, and foster growth in enterprises. 
-              Our team brings extensive expertise in machine learning, artificial intelligence, and enterprise AI solutions, backed by years of cutting-edge research and industry experience. With a strong foundation in applied AI research, software engineering, and large-scale system development, we have successfully designed and deployed AI-driven solutions across various industries, including finance, aerospace, healthcare, and enterprise automation.
+              ABI AI delivers bespoke AI solutions to enhance operational efficiency, drive innovation, and foster growth in enterprises.
+              Our team brings extensive expertise in machine learning, artificial intelligence, and enterprise AI solutions, backed by years of cutting-edge research and industry experience. <br> With a strong foundation in applied AI research, software engineering, and large-scale system development, we have successfully designed and deployed AI-driven solutions across various industries, including finance, aerospace, healthcare, and enterprise automation.
             </p>
 
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
