@@ -14,20 +14,20 @@ const FeatureSection = () => {
         <div className="mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
           <div className="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-1/3">
             <h3 className="text-black text-2xl">50+</h3>
-            <h4 className="mt-10 text-black  opacity-70 text-xl">Academic Citations</h4>
+            <h4 className="mt-10 text-black  opacity-70 text-xl">Research Citations in AI & Machine Learning</h4>
           </div>
 
           <div className="w-1/3 bg-dp p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-1/3">
             <h3 className="text-white text-2xl">500M+</h3>
-            <h4 className="mt-10 text-white opacity-70 text-xl">Data Points Processed</h4>
+            <h4 className="mt-10 text-white opacity-70 text-xl">Data Points Analyzed for Business Insights</h4>
           </div>
           <div className="w-1/3 bg-dp p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-1/3">
-            <h3 className="text-white text-2xl">100%</h3>
-            <h4 className="mt-10 text-white opacity-70 text-xl">AI-Powered Automation</h4>
+            <h3 className="text-white text-2xl">1B+</h3>
+            <h4 className="mt-10 text-white opacity-70 text-xl">Predictions Generated for Smarter Business Operations</h4>
           </div>
           <div className="lg:rounded-xl lg:w-1/3 lg:bg-dp bg-dp p-8 rounded-xl m-5 xxs:w-full xxs:bg-dp xxs:rounded-xl xs:w-full xs:bg-dp xs:rounded-xl sm:hidden md:hidden lg:block">
             <h3 className="text-white text-2xl">24/7</h3>
-            <h4 className="mt-10 text-white opacity-70 text-xl">Reliability</h4>
+            <h4 className="mt-10 text-white opacity-70 text-xl">AI Reliability for Enterprise Operations</h4>
           </div>
         </div>
       </Fade>
@@ -45,13 +45,12 @@ const FeatureSection = () => {
           <div className="lg:w-1/2 sm:text-center lg:text-right flex flex-col justify-center">
             <h2 className="text-black text-4xl font-semibold">PERFORMANCE</h2>
             <h3 className="text-black text-6xl font-bold xxs:text-2xl xs:text-3xl sm:text-5xl lg:text-6xl text-gradient bg-gradient-to-r from-pink to-purple">
-              Time to unlock new speeds
+              Unlock Unmatched AI Speed & Efficiency
             </h3>
 
             <p className="mt-3 text-base text-black-70 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-auto lg:mr-0">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s.
+            At ABI AI, we build high-performance AI solutions that process data 10x faster, optimize decision-making, and automate workflows in real time.
+            Our custom AI models are designed for enterprise-grade speed, scalability, and reliability, ensuring seamless integration with your business operations.
             </p>
 
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-end">
