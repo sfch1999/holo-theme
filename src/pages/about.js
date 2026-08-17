@@ -11,30 +11,15 @@ import {
   FactRow,
   ArrowRight,
 } from "../components/ui"
-import { company, publications } from "../data/company"
+import {
+  company,
+  publications,
+  founderExperience,
+  education,
+} from "../data/company"
 
-const founderExperience = [
-  {
-    role: "Human Data — Lead",
-    org: "xAI",
-    body: "Has led human-data work at xAI, a frontier AI laboratory. That remit covers the disciplines a frontier model depends on: expert and domain-specific data, model evaluation and preference data, red-teaming and safety review, and the quality systems and contributor operations that hold them together at scale. It is direct experience of what large AI labs actually require from a human-data programme — and of how those programmes fail when specification and quality measurement are treated as afterthoughts.",
-  },
-  {
-    role: "Head of Human Data",
-    org: "G2i — via ABI AI",
-    body: "Leads human-data operations for G2i, a current ABI AI customer. This engagement is contracted and delivered through ABI AI.",
-  },
-  {
-    role: "Robotics and autonomous systems",
-    org: "SOTI",
-    body: "Developed and deployed autonomous drone systems — work spanning perception, navigation, and the field-reliability engineering that separates a convincing demonstration from hardware operating unattended in the real world. Autonomy is an unforgiving test of applied machine learning: the system has to hold up outside the conditions it was trained on.",
-  },
-  {
-    role: "Applied machine-learning research",
-    org: "University of Toronto",
-    body: "Peer-reviewed research across financial AI, explainable AI for healthcare, computer vision, and autonomous systems — including work on reinforcement-learning approaches to derivatives hedging, published with the University of Toronto's Rotman School of Management and Department of Computer Science.",
-  },
-]
+import founderPhotoJpg from "../images/founder-soroush-farghadani.jpg"
+import founderPhotoWebp from "../images/founder-soroush-farghadani.webp"
 
 const AboutPage = () => {
   const { registeredOffice: office } = company
@@ -134,39 +119,68 @@ const AboutPage = () => {
       {/* Founder */}
       <Section>
         <Container>
-          <div className="max-w-3xl">
-            <Eyebrow>Founder</Eyebrow>
-            <SectionHeading>{company.founder.name}</SectionHeading>
-            <div className="mt-6 space-y-5 text-base leading-relaxed text-ink-soft">
-              <p>
-                ABI AI was founded by {company.founder.name}, who works at the
-                intersection of applied machine-learning research and
-                large-scale human-data operations — two things that are usually
-                found in separate people.
-              </p>
-              <p>
-                He has led human-data work at xAI, a frontier AI laboratory, and
-                has built and deployed autonomous drone systems in industry.
-                That combination matters: it means the same person who
-                understands what a frontier lab needs from its data has also
-                shipped machine-learning systems that had to survive contact
-                with the physical world.
-              </p>
-              <p>
-                Underpinning both is peer-reviewed research at the University of
-                Toronto spanning financial AI, explainable AI for healthcare,
-                computer vision, and autonomous systems.
-              </p>
+          <div className="grid gap-10 lg:grid-cols-[13rem_1fr] lg:gap-14">
+            <div>
+              <picture>
+                <source srcSet={founderPhotoWebp} type="image/webp" />
+                <img
+                  src={founderPhotoJpg}
+                  alt={`Portrait of ${company.founder.name}, founder of ABI AI`}
+                  width="400"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-40 rounded-xl border border-line object-cover sm:w-48 lg:w-full"
+                />
+              </picture>
+
+              <div className="mt-5 flex flex-col gap-2">
+                <a
+                  href={company.founder.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent underline-offset-4 hover:underline"
+                >
+                  LinkedIn
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </a>
+                <a
+                  href={company.founder.scholar}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent underline-offset-4 hover:underline"
+                >
+                  Google Scholar
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </a>
+              </div>
             </div>
-            <a
-              href={company.founder.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent underline-offset-4 hover:underline"
-            >
-              View LinkedIn profile
-              <ArrowRight className="h-3.5 w-3.5" />
-            </a>
+
+            <div className="max-w-2xl">
+              <Eyebrow>Founder</Eyebrow>
+              <SectionHeading>{company.founder.name}</SectionHeading>
+              <div className="mt-6 space-y-5 text-base leading-relaxed text-ink-soft">
+                <p>
+                  ABI AI was founded by {company.founder.name}, who works at the
+                  intersection of applied machine-learning research and
+                  large-scale human-data operations — two capabilities usually
+                  found in separate people.
+                </p>
+                <p>
+                  He leads human-data work at xAI, a frontier AI laboratory,
+                  where he sets direction for frontier data and evaluation
+                  programmes. Before that he led the development of AI for
+                  autonomous drone navigation in GPS-denied environments at
+                  SOTI&rsquo;s advanced aerospace research group.
+                </p>
+                <p>
+                  That combination is the reason ABI AI does both things it
+                  does: the same person who knows what a frontier lab needs from
+                  its human data has also shipped machine-learning systems that
+                  had to hold up outside the conditions they were trained on.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Explicit separation of founder history from company track record. */}
@@ -182,11 +196,13 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="mt-10 space-y-8">
+          <ol className="mt-10 space-y-9">
             {founderExperience.map(item => (
-              <div
-                key={item.role}
-                className="border-l-2 border-line-strong pl-6"
+              <li
+                key={`${item.role}-${item.org}`}
+                className={`border-l-2 pl-6 ${
+                  item.viaAbiAi ? "border-accent" : "border-line-strong"
+                }`}
               >
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                   <h3 className="text-base font-semibold text-ink">
@@ -198,17 +214,60 @@ const AboutPage = () => {
                   <span className="text-sm font-medium text-accent">
                     {item.org}
                   </span>
+                  {item.current ? (
+                    <span className="rounded-full border border-accent-line bg-accent-soft px-2 py-0.5 text-[0.6875rem] font-semibold text-accent-strong">
+                      Current
+                    </span>
+                  ) : null}
                 </div>
-                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">
+                <p className="mt-1 text-xs text-ink-soft">
+                  {item.period} · {item.location}
+                </p>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-soft">
                   {item.body}
                 </p>
-              </div>
+                {item.points.length ? (
+                  <ul className="mt-3 max-w-2xl space-y-2">
+                    {item.points.map(point => (
+                      <li
+                        key={point}
+                        className="flex gap-2.5 text-sm leading-relaxed text-ink-soft"
+                      >
+                        <span
+                          className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
+                          aria-hidden="true"
+                        />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </li>
             ))}
+          </ol>
+
+          <div className="mt-12">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">
+              Education
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {education.map(item => (
+                <li key={item.qualification} className="text-sm">
+                  <span className="font-medium text-ink">
+                    {item.qualification}
+                  </span>
+                  <span className="text-ink-soft">
+                    {" "}
+                    — {item.institution}, {item.period} ({item.detail})
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <p className="mt-8 max-w-2xl text-xs leading-relaxed text-ink-soft">
-            xAI is referenced here solely as part of the founder&rsquo;s
-            employment history. xAI is not a customer, partner, or affiliate of
+          <p className="mt-10 max-w-2xl text-xs leading-relaxed text-ink-soft">
+            xAI and SOTI are referenced solely as part of the founder&rsquo;s
+            employment history. Neither is a customer, partner, or affiliate of
             ABI AI.
           </p>
         </Container>

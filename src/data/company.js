@@ -30,6 +30,7 @@ export const company = {
   founder: {
     name: "Soroush Farghadani",
     linkedin: "https://www.linkedin.com/in/soroush-farghadani/",
+    scholar: "https://scholar.google.com/citations?user=Gv9ET40AAAAJ&hl=en",
   },
   /** Licensed business activities, exactly as licensed. */
   activities: [
@@ -38,6 +39,75 @@ export const company = {
     "Innovation and artificial intelligence research and consultancy",
   ],
 }
+
+/**
+ * Founder's professional history, taken from his CV.
+ *
+ * This is the founder's own experience and is presented as such throughout the
+ * site — never as work delivered by ABI AI. Where ABI AI is the contracting
+ * party (the G2i engagement) that is stated explicitly.
+ */
+export const founderExperience = [
+  {
+    role: "Human Data — Lead",
+    org: "xAI",
+    period: "Apr 2025 – Present",
+    location: "Palo Alto, CA (remote)",
+    current: true,
+    body: "Sets direction for frontier data and evaluation workstreams at a frontier AI laboratory — deciding focus areas, defining quality standards, and turning broad model-assessment needs into executable plans for distributed expert teams.",
+    points: [
+      "Led a cross-domain evaluation initiative with approximately 450 AI tutors across STEM, medicine, and law, producing long-horizon tasks, expert rubrics, and golden responses for frontier model assessment",
+      "Built the operating workflows behind human-data generation: task design guidance, reviewer processes, rubric standards, and quality-control systems",
+      "Translated model behaviour, failure modes, and evaluation results into structured feedback loops for research and engineering teams",
+    ],
+  },
+  {
+    role: "Head of Human Data",
+    org: "G2i",
+    period: "Current",
+    location: "Contracted and delivered through ABI AI",
+    viaAbiAi: true,
+    body: "Leads human-data operations for G2i, a current ABI AI customer. This is the one engagement on this page where ABI AI is the contracting party.",
+    points: [],
+  },
+  {
+    role: "Lead Data Scientist",
+    org: "SOTI — Advanced Aerospace Research",
+    period: "May 2022 – Mar 2025",
+    location: "Toronto, Canada",
+    body: "Led end-to-end development of AI systems for autonomous drone navigation in GPS-denied environments — the kind of problem where a model that only works in benign conditions is worse than none at all.",
+    points: [
+      "Vision-based landing, static and dynamic obstacle avoidance, and adaptive path planning",
+      "Designed evaluation standards and reliability benchmarks for autonomy systems, improving safety, robustness, and deployment readiness",
+      "Turned experimental models into dependable, production-oriented workflows for mission-critical applications",
+    ],
+  },
+  {
+    role: "Machine Learning Researcher",
+    org: "Rotman School of Management, University of Toronto",
+    period: "Sep 2021 – May 2022",
+    location: "Advisor: Prof. John C. Hull",
+    body: "Designed and tuned a novel distributional reinforcement-learning method for optimal hedging under uncertainty in financial markets, published and presented at academic and industry venues.",
+    points: [],
+  },
+  {
+    role: "Machine Learning Researcher",
+    org: "Technical University of Munich",
+    period: "Oct 2019 – Aug 2021",
+    location: "Munich, Germany (remote)",
+    body: "Published applied machine-learning research spanning interpretable graph neural networks and medical imaging, including deep-learning pipelines for disease prediction and early dementia detection under limited-data constraints.",
+    points: [],
+  },
+]
+
+export const education = [
+  {
+    qualification: "M.Sc. Computer Science, concentration in Data Science",
+    institution: "University of Toronto",
+    period: "Sep 2021 – Dec 2022",
+    detail: "GPA 4.0 / 4.0",
+  },
+]
 
 /**
  * Peer-reviewed and preprint work by the founder. Every entry below was
@@ -52,7 +122,7 @@ export const publications = [
     venue: "Frontiers in Artificial Intelligence",
     year: "2023",
     href: "https://doi.org/10.3389/frai.2023.1129370",
-    note: "Reinforcement learning with quantile regression applied to hedging a stochastically arriving derivatives book.",
+    note: "Reinforcement learning with quantile regression applied to hedging a stochastically arriving derivatives book. Also presented at RiskMinds and CDI.",
   },
   {
     title:

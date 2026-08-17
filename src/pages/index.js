@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Check,
 } from "../components/ui"
+import { HumanDataLoop } from "../components/diagrams"
 import { company } from "../data/company"
 
 const pillars = [
@@ -72,8 +73,8 @@ const IndexPage = () => (
         aria-hidden="true"
       />
       <Container className="relative">
-        <div className="py-20 sm:py-24 lg:py-32">
-          <div className="max-w-3xl">
+        <div className="grid items-center gap-14 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:py-24">
+          <div>
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-line bg-accent-soft px-3 py-1 text-xs font-medium text-accent-strong">
               Registered in Meydan Free Zone, Dubai
             </p>
@@ -96,7 +97,37 @@ const IndexPage = () => (
               </Button>
             </div>
           </div>
+
+          <div className="lg:pl-4">
+            <div className="rounded-xl border border-line bg-paper-raised/80 p-6 backdrop-blur-sm sm:p-8">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                How human data becomes model improvement
+              </p>
+              <HumanDataLoop />
+            </div>
+          </div>
         </div>
+      </Container>
+    </div>
+
+    {/* Company facts — verifiable, no invented metrics. */}
+    <div className="border-b border-line bg-paper-sunken">
+      <Container>
+        <dl className="grid gap-y-8 py-10 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { label: "Legal entity", value: company.legalName },
+            { label: "Jurisdiction", value: "Meydan Free Zone, Dubai" },
+            { label: "Established", value: company.established },
+            { label: "Current customer", value: "G2i" },
+          ].map(fact => (
+            <div key={fact.label}>
+              <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                {fact.label}
+              </dt>
+              <dd className="mt-2 text-sm font-medium text-ink">{fact.value}</dd>
+            </div>
+          ))}
+        </dl>
       </Container>
     </div>
 
@@ -195,11 +226,12 @@ const IndexPage = () => (
             <Eyebrow>Founder experience</Eyebrow>
             <SectionHeading>{company.founder.name}</SectionHeading>
             <p className="mt-5 text-base leading-relaxed text-ink-soft">
-              ABI AI was founded by {company.founder.name}, who has led
-              human-data work at xAI, built and deployed autonomous drone
-              systems in industry, and published peer-reviewed machine-learning
-              research spanning financial AI, explainable AI for healthcare,
-              computer vision, and autonomous systems.
+              ABI AI was founded by {company.founder.name}, who leads human-data
+              work at xAI, previously led AI for autonomous drone navigation at
+              SOTI&rsquo;s advanced aerospace research group, and has published
+              peer-reviewed machine-learning research spanning financial AI,
+              explainable AI for healthcare, computer vision, and autonomous
+              systems.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-ink-soft">
               The experience described here is the founder&rsquo;s own
@@ -219,15 +251,16 @@ const IndexPage = () => (
               },
               {
                 label: "Robotics & autonomy",
-                value: "Autonomous drones developed and deployed at SOTI",
+                value:
+                  "Lead Data Scientist, SOTI Advanced Aerospace Research",
               },
               {
                 label: "Academic background",
-                value: "University of Toronto",
+                value: "M.Sc. Computer Science, University of Toronto",
               },
               {
                 label: "Published research",
-                value: "Frontiers in AI · MICCAI MLMI",
+                value: "Frontiers in AI · MICCAI MLMI · arXiv",
               },
             ].map(item => (
               <div

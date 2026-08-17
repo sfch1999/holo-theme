@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ABI AI monogram — editable master.
+
+  A rising axis (the "A") inside a rounded square, with a teal node marking the
+  end point. Designed to stay legible down to 16px, so avoid adding fine detail.
+
+  Palette:
+    ink    #0E1A2B  (square)
+    white  #FFFFFF  (axis strokes)
+    accent #0B655A  (node)
+
+  This file is the source of truth for the mark. Three places consume the same
+  geometry and must be updated together if it changes:
+    1. this file
+    2. src/components/brand.js       (inline React version used on the site)
+    3. scripts/generate-brand-assets.js  (renders icon.png + og-image.png)
+  After editing, run:  yarn brand-assets
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="ABI AI">
+  <title>ABI AI monogram</title>
+
+  <rect width="32" height="32" rx="7" fill="#0E1A2B"/>
+
+  <!-- Ascending axis, forming the apex of an "A" -->
+  <path d="M8 22.5 L14.2 12.2 L20.4 22.5"
+        fill="none" stroke="#FFFFFF" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Crossbar -->
+  <path d="M11.1 19.1 H17.3"
+        fill="none" stroke="#FFFFFF" stroke-width="2.4"
+        stroke-linecap="round"/>
+
+  <!-- Accent node -->
+  <circle cx="23.6" cy="11.4" r="2.4" fill="#0B655A"/>
+</svg>

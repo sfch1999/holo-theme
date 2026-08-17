@@ -1,9 +1,15 @@
 import * as React from "react"
 
 /**
- * Geometric monogram. Deliberately simple — a rising axis inside a rounded
- * square — because no approved ABI AI logo asset exists yet. It reads as a
- * mark at 24px and as a favicon at 16px without relying on fine detail.
+ * Geometric monogram — a rising axis inside a rounded square. Deliberately
+ * simple so it reads at 24px in the header and at 16px as a favicon.
+ *
+ * Editable master lives at src/images/brand/monogram.svg (with the lockup at
+ * brand/wordmark.svg). The geometry is duplicated inline here so the mark can
+ * be styled and sized by React without an extra network request. If you change
+ * the mark, update all three: the two SVG masters, this component, and
+ * scripts/generate-brand-assets.js — then run `yarn brand-assets` to
+ * regenerate icon.png and og-image.png.
  */
 export const Monogram = ({ className = "", title }) => (
   <svg
