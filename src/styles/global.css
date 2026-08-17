@@ -2,59 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-
-p, input, textarea {
-  font-family: "Noto Serif", sans-serif;
-  font-size: 1rem !important;
-  line-height: 1.5rem !important;
-}
-
-
- h1,h2,h3,h4,h5,h6,span {
-  font-family: "Montserrat", sans-serif;
-}
-
-a {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem !important;
-}
-
 @layer base {
-  a {
-    color: white;
+  :root {
+    color-scheme: light;
   }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
   body {
-    background-color: hsla(243, 60%, 95%, 1);
+    @apply bg-paper text-ink font-sans antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Visible, high-contrast focus ring for keyboard users on every
+     interactive element. Never remove without a replacement. */
+  :focus-visible {
+    outline: 2px solid theme("colors.accent.DEFAULT");
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: theme("colors.accent.soft");
+    color: theme("colors.accent.strong");
   }
 }
 
-@layer utilities {
-  .text-gradient {
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* Skip link: visually hidden until focused, then pinned to the top-left.
+   Written as plain CSS rather than @apply — Tailwind's utility layering made
+   the :focus state lose to the hidden base state, leaving the link
+   permanently clipped to 1px and therefore useless to keyboard users. */
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.625rem 1rem;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  border-radius: 0.375rem;
+  background-color: theme("colors.ink.DEFAULT");
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@layer components {
+  /* Hairline grid backdrop used sparingly behind the hero. Purely
+     decorative, so it is hidden from assistive technology at the usage site. */
+  .grid-backdrop {
+    background-image: linear-gradient(
+        to right,
+        theme("colors.line.DEFAULT") 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        theme("colors.line.DEFAULT") 1px,
+        transparent 1px
+      );
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 0%,
+      #000 40%,
+      transparent 100%
+    );
   }
 }
 
+/* Honour the OS "reduce motion" setting: no transforms, no transitions,
+   no smooth scrolling. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-/* ~~~~ Custom CSS - I know it's bad T_T ~~~~ */
-
-/* Stop page  side scrolling on mobile */
-html,
-body {
-  overflow-x: hidden;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
-
-/* Mobile Nav */
-.pb-3 {padding-bottom: 0.75rem; display: flex; flex-direction: column; align-items: center;}
-
-/* Footer background colour */
-.footer.max-w-7xl.mx-auto.p-20.mt-10.rounded-xl {background: linear-gradient(90deg, #796a99, #554970);}
-
-/* mobile dropdown background */
-.md\:hidden {background-color: hsla(243, 60%, 95%, 1); border-radius: 0px 0px 10px 10px;}
-
-/* blog read more arrows */
-.w-3\.5 {padding-left: 5px;}
-
-/* 404 page */ 
-.\34 04-p {display: flex; flex-direction: column; align-items: center; padding: 40px 0px;}

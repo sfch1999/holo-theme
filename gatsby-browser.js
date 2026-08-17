@@ -1,15 +1,9 @@
 /**
- * Implement Gatsby's Browser APIs in this file.
+ * Global styles and self-hosted fonts.
  *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
+ * Fonts are bundled rather than fetched from a font CDN so the site makes no
+ * third-party requests at runtime.
  */
 
-// You can delete this file if you're not using it
-
-import "@fontsource/montserrat/400.css"
-import "@fontsource/montserrat/500.css"
-import "@fontsource/montserrat/600.css"
-import "@fontsource/montserrat/900.css"
-import "@fontsource/noto-serif/400.css"
-
+import "@fontsource-variable/inter"
 import "./src/styles/global.css"
