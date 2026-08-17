@@ -1,45 +1,116 @@
-import { Link } from "gatsby";
-import React from "react";
-import logo from "../images/removed-Holographic.png";
+import * as React from "react"
+import { Link } from "gatsby"
+import { Wordmark } from "./brand"
+import { Container } from "./ui"
+import { company, navLinks } from "../data/company"
+
+const legalLinks = [
+  { to: "/privacy/", label: "Privacy Policy" },
+  { to: "/terms/", label: "Terms of Use" },
+]
 
 const Footer = () => {
+  const year = new Date().getFullYear()
+  const { registeredOffice: office } = company
+
   return (
-    <footer className="bg-gray-900 text-white py-10 mt-10 rounded-t-xl shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo & Description */}
+    <footer className="border-t border-line bg-paper-sunken">
+      <Container>
+        <div className="grid gap-12 py-14 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-16">
+          {/* Company identity — the block due-diligence reviewers look for. */}
           <div>
-            <img className="max-h-16 w-auto mb-4" src={logo} alt="Holo Logo" />
-            <p className="text-sm opacity-80">
-              At ABI AI, we bring cutting-edge artificial intelligence solutions to businesses
+            <Wordmark />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-soft">
+              AI systems and human data operations built for real-world
+              deployment.
             </p>
+
+            <div className="mt-6 space-y-1 text-sm text-ink-soft">
+              <p className="font-medium text-ink">{company.legalName}</p>
+              <p>{company.jurisdiction}</p>
+              <p>Formation No. {company.formationNumber}</p>
+              <p>Licence No. {company.licenseNumber}</p>
+              <p className="pt-2">
+                <span className="text-ink-muted">Registered office:</span>{" "}
+                {office.short}
+              </p>
+            </div>
           </div>
 
-          {/* Navigation */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Company</h3>
-            <ul className="space-y-2">
-              <li><Link to="/about" className="hover:underline">About</Link></li>
-              <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">
+              Company
+            </h2>
+            <ul className="mt-4 space-y-3">
+              {navLinks.map(link => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-sm text-ink-soft transition-colors hover:text-ink motion-reduce:transition-none"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              {legalLinks.map(link => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-sm text-ink-soft transition-colors hover:text-ink motion-reduce:transition-none"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-3">Resources</h3>
-            <ul className="space-y-2">
-              <li><Link to="/gallery" className="hover:underline">Innovations</Link></li>
-              <li><a href="https://github.com/lilxyzz/holo-theme" target="_blank" rel="noopener noreferrer" className="hover:underline">Scholar</a></li>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">
+              Contact
+            </h2>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li>
+                <a
+                  href={`mailto:${company.email}`}
+                  className="text-ink-soft transition-colors hover:text-ink motion-reduce:transition-none"
+                >
+                  {company.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${company.telephoneHref}`}
+                  className="text-ink-soft transition-colors hover:text-ink motion-reduce:transition-none"
+                >
+                  {company.telephone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={company.founder.linkedin}
+                  className="text-ink-soft transition-colors hover:text-ink motion-reduce:transition-none"
+                  rel="noopener noreferrer me"
+                  target="_blank"
+                >
+                  Founder on LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        {/* Copyright Section */}
-        <div className="border-t border-gray-700 mt-8 pt-6 text-sm text-gray-400 text-center">
-          &copy; {new Date().getFullYear()} ABI AI. All Rights Reserved.
+        <div className="flex flex-col gap-3 border-t border-line py-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-ink-soft">
+            © {year} {company.legalName}. All rights reserved.
+          </p>
+          <p className="text-xs text-ink-soft">
+            Registered in {company.jurisdiction}.
+          </p>
         </div>
-      </div>
+      </Container>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

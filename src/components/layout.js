@@ -1,22 +1,18 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from "react"
+import Nav from "./nav"
 import Footer from "./footer"
-import Navbar from "./navbar"
 
-const Layout = ({ children }) => {
-  return (
-    <div>
-      <Navbar></Navbar>
+const Layout = ({ children }) => (
+  <div className="flex min-h-screen flex-col bg-paper">
+    <a className="skip-link" href="#main">
+      Skip to main content
+    </a>
+    <Nav />
+    <main id="main" className="flex-1">
       {children}
-      <Footer></Footer>
-    </div>
-  )
-}
+    </main>
+    <Footer />
+  </div>
+)
 
 export default Layout

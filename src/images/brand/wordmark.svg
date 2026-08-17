@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ABI AI horizontal lockup — editable master.
+
+  Monogram plus wordmark, for use on light backgrounds. For dark backgrounds,
+  change the <text> fill to #FFFFFF.
+
+  The wordmark is set in Inter SemiBold (600) at -0.035em tracking, matching the
+  site's type. The text is live (not outlined) so it stays editable; if you need
+  a version that renders identically without Inter installed, convert the text
+  to outlines in a vector editor and save as wordmark-outlined.svg.
+
+  See src/images/brand/monogram.svg for the mark on its own and for the list of
+  files that must be kept in sync.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="32" viewBox="0 0 132 32" role="img" aria-label="ABI AI">
+  <title>ABI AI</title>
+
+  <g>
+    <rect width="32" height="32" rx="7" fill="#0E1A2B"/>
+    <path d="M8 22.5 L14.2 12.2 L20.4 22.5"
+          fill="none" stroke="#FFFFFF" stroke-width="2.4"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M11.1 19.1 H17.3"
+          fill="none" stroke="#FFFFFF" stroke-width="2.4"
+          stroke-linecap="round"/>
+    <circle cx="23.6" cy="11.4" r="2.4" fill="#0B655A"/>
+  </g>
+
+  <text x="44" y="22"
+        font-family="Inter, 'Inter Variable', -apple-system, 'Helvetica Neue', Arial, sans-serif"
+        font-size="17" font-weight="600" letter-spacing="-0.6" fill="#0E1A2B">ABI AI</text>
+</svg>
