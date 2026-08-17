@@ -114,11 +114,26 @@ export const education = [
  * verified against the publisher or arXiv listing — do not add an entry that
  * cannot be linked to a primary source.
  */
+/**
+ * Authors are listed in published order, with `equal: true` on every author the
+ * paper marks as an equal contributor and `self: true` on the founder. Joint
+ * first authorship is shown with the standard ⋆ notation rather than by
+ * reordering the list, so the citation always matches what a reader finds at
+ * the DOI. Both equal-contribution claims below were checked against the
+ * "Equal contribution" footnote on the papers' title pages.
+ */
 export const publications = [
   {
     title: "Gamma and vega hedging using deep distributional reinforcement learning",
-    authors:
-      "J. Cao, J. Chen, S. Farghadani, J. Hull, Z. Poulos, Z. Wang, J. Yuan",
+    authors: [
+      { name: "J. Cao" },
+      { name: "J. Chen" },
+      { name: "S. Farghadani", self: true },
+      { name: "J. Hull" },
+      { name: "Z. Poulos" },
+      { name: "Z. Wang" },
+      { name: "J. Yuan" },
+    ],
     venue: "Frontiers in Artificial Intelligence",
     year: "2023",
     href: "https://doi.org/10.3389/frai.2023.1129370",
@@ -127,17 +142,32 @@ export const publications = [
   {
     title:
       "IA-GCN: Interpretable Attention Based Graph Convolutional Network for Disease Prediction",
-    authors: "A. Kazi, S. Farghadani, I. Aganj, N. Navab",
+    authors: [
+      { name: "A. Kazi", equal: true },
+      { name: "S. Farghadani", equal: true, self: true },
+      { name: "I. Aganj" },
+      { name: "N. Navab" },
+    ],
+    equalContribution: true,
     venue: "Machine Learning in Medical Imaging (MLMI), MICCAI",
     year: "2023",
     href: "https://doi.org/10.1007/978-3-031-45673-2_38",
+    altHref: "https://arxiv.org/abs/2103.15587",
+    altLabel: "arXiv:2103.15587",
     note: "An attention module that exposes which input features drive a clinical prediction, rather than returning an unexplained score.",
   },
   {
     title:
       "Dementia Severity Classification under Small Sample Size and Weak Supervision in Thick Slice MRI",
-    authors:
-      "R. Shirkavand, S. Ayromlou, S. Farghadani, M. Tahaei, F. Pourakpour, et al.",
+    authors: [
+      { name: "R. Shirkavand", equal: true },
+      { name: "S. Ayromlou", equal: true },
+      { name: "S. Farghadani", equal: true, self: true },
+      { name: "M. Tahaei" },
+      { name: "F. Pourakpour" },
+      { name: "et al." },
+    ],
+    equalContribution: true,
     venue: "arXiv preprint",
     year: "2021",
     href: "https://arxiv.org/abs/2103.10056",

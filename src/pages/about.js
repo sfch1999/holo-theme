@@ -280,8 +280,10 @@ const AboutPage = () => {
             <Eyebrow>Founder publications</Eyebrow>
             <SectionHeading>Peer-reviewed and preprint work.</SectionHeading>
             <p className="mt-5 text-sm leading-relaxed text-ink-soft">
-              Co-authored research by {company.founder.name}. Each entry links
-              to the publisher or arXiv record so it can be verified directly.
+              Research co-authored by {company.founder.name}, including joint
+              first authorship on two papers. Authors are listed in published
+              order and every entry links to the publisher or arXiv record, so
+              each citation can be checked directly against the source.
             </p>
           </div>
 
@@ -299,13 +301,48 @@ const AboutPage = () => {
                       {paper.title}
                     </a>
                   </h3>
-                  <p className="mt-2 text-sm text-ink-soft">{paper.authors}</p>
+                  <p className="mt-2 text-sm text-ink-soft">
+                    {paper.authors.map((author, i) => (
+                      <React.Fragment key={author.name}>
+                        {i > 0 ? ", " : ""}
+                        <span
+                          className={
+                            author.self ? "font-semibold text-ink" : undefined
+                          }
+                        >
+                          {author.name}
+                          {author.equal ? (
+                            <span aria-hidden="true">&#8902;</span>
+                          ) : null}
+                        </span>
+                      </React.Fragment>
+                    ))}
+                  </p>
                   <p className="mt-1 text-sm text-ink-muted">
                     <span className="italic">{paper.venue}</span>, {paper.year}
                   </p>
+                  {paper.equalContribution ? (
+                    <p className="mt-2 text-xs text-ink-soft">
+                      <span aria-hidden="true">&#8902;</span> Joint first
+                      authors — the paper marks these authors as contributing
+                      equally.
+                    </p>
+                  ) : null}
                   <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-soft">
                     {paper.note}
                   </p>
+                  {paper.altHref ? (
+                    <p className="mt-2 text-xs">
+                      <a
+                        href={paper.altHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent underline underline-offset-4"
+                      >
+                        Preprint: {paper.altLabel}
+                      </a>
+                    </p>
+                  ) : null}
                 </article>
               </li>
             ))}
