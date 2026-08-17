@@ -4,6 +4,10 @@
   "description": "Holo is a visually striking and highly customizable open source theme built on the powerful Gatsby framework and integrated with the versatile Decap CMS.",
   "version": "1.0.0",
   "author": "Travis Lord <hi@travislord.xyz>",
+  "resolutions": {
+    "msgpackr": "^1.11.2",
+    "ordered-binary": "^1.5.2"
+  },
   "dependencies": {
     "@fontsource/montserrat": "^5.1.0",
     "@fontsource/noto-serif": "^5.1.0",
