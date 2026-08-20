@@ -1,5 +1,14 @@
 [build]
-  command = "yarn run build"
+  # `gatsby clean` first, deliberately.
+  #
+  # Netlify's @netlify/plugin-gatsby restores .cache/ and public/ from the
+  # build cache before this runs, and Gatsby only ever adds to public/ — it
+  # never deletes files it no longer generates. Assets removed from the repo
+  # therefore kept getting republished: 53MB of dead files survived the
+  # redesign, including the old Decap CMS bundle still serving a login page at
+  # /admin. Cleaning first costs a full rebuild (~1 min for this site) and
+  # guarantees the deploy contains only what the current source produces.
+  command = "yarn run clean && yarn run build"
   publish = "public"
 
 [build.environment]
@@ -8,4 +17,12 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "ALLOW-FROM https://builtatlightspeed.com, https://jamstackthemes.dev"
+    # The theme this site was built from shipped
+    # `X-Frame-Options = "ALLOW-FROM <theme marketplaces>"` so its demo could be
+    # embedded. ALLOW-FROM is deprecated and ignored by every current browser,
+    # so it granted nothing and protected nothing — it only left two unrelated
+    # vendors named in the headers of a corporate site.
+    X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "frame-ancestors 'self'"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
