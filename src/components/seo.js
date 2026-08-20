@@ -75,6 +75,13 @@ const Seo = ({
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
       <link rel="canonical" href={canonical} />
+
+      {/* Icons. gatsby-plugin-manifest injects the PNG set; these two cover
+          the SVG (crisp at any size in modern browsers) and the classic
+          /favicon.ico that crawlers, RSS readers and link unfurlers request
+          directly without parsing the page. */}
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       {noindex ? <meta name="robots" content="noindex, follow" /> : null}
 
       <meta property="og:site_name" content={SITE_NAME} />
